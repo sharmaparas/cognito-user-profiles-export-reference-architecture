@@ -638,7 +638,6 @@ Resources:
                 - cloudformation.amazonaws.com
             Action:
               - sts:AssumeRole
-              - states:DescribeStateMachine
       Policies:
         - PolicyName: StackSetAdminPolicy
           PolicyDocument:
@@ -646,6 +645,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - sts:AssumeRole
+                  - states:DescribeStateMachine
                 Resource:
                   - !GetAtt StackSetExecRole.Arn
 
