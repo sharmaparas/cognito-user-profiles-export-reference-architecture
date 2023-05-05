@@ -645,7 +645,6 @@ Resources:
               - Effect: Allow
                 Action:
                   - sts:AssumeRole
-                  - states:DescribeStateMachine
                 Resource:
                   - !GetAtt StackSetExecRole.Arn
 
@@ -759,6 +758,7 @@ Resources:
                   - states:UpdateStateMachine
                   - states:TagResource
                   - states:ListTagsForResource
+                  - states:DescribeStateMachine
                 Resource:
                   - !Sub arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:*
                   - !Sub arn:${AWS::Partition}:states:${SecondaryRegion}:${AWS::AccountId}:stateMachine:*
